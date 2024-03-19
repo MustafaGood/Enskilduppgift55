@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Form</title>
+    <title>Signup</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
 <div class="container mt-5">
-    <h2>Signup Form</h2>
+    <h2>Create Account</h2>
     <form id="signupForm">
         <div class="form-group">
-            <label for="signupUsername">Användarnamn:</label>
+            <label for="signupUsername">Username:</label>
             <input type="text" class="form-control" id="signupUsername" required>
         </div>
         <div class="form-group">
-            <label for="signupEmail">E-post:</label>
+            <label for="signupEmail">Email:</label>
             <input type="email" class="form-control" id="signupEmail" required>
         </div>
         <div class="form-group">
-            <label for="signupFullName">Fullständiga namn:</label>
+            <label for="signupFullName">Full Name:</label>
             <input type="text" class="form-control" id="signupFullName" required>
         </div>
         <div class="form-group">
-            <label for="signupPassword">Lösenord:</label>
-            <input type="password" class="form-control" id="signupPassword" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-            <small>Lösenordet måste vara minst 8 tecken och innehålla en siffra och en stor bokstav.</small>
+            <label for="signupPassword">Password:</label>
+            <input type="password" class="form-control" id="signupPassword" required 
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <small class="form-text text-muted">
+                Must be at least 8 characters long, contain numbers and both lowercase and uppercase letters.
+            </small>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
 </div>
 
@@ -39,16 +42,14 @@
 <script>
 document.getElementById('signupForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    
     var formData = {
         username: document.getElementById('signupUsername').value,
         email: document.getElementById('signupEmail').value,
         fullName: document.getElementById('signupFullName').value,
         password: document.getElementById('signupPassword').value
     };
-    
     console.log('Signup data:', formData);
-    // Här kan du skicka formData till servern med t.ex. en AJAX-förfrågan eller fetch.
+    // Add your code here to handle the form data, like sending it to a server or validating it further.
 });
 </script>
 
