@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Signup</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
 <div class="container mt-5">
-    <h2>Login</h2>
-    <form id="loginForm">
+    <h2>Create Account</h2>
+    <form id="signupForm">
         <div class="form-group">
-            <label for="loginUsername">Username:</label>
-            <input type="text" class="form-control" id="loginUsername" required>
+            <label for="signupUsername">Username:</label>
+            <input type="text" class="form-control" id="signupUsername" required>
         </div>
         <div class="form-group">
-            <label for="loginPassword">Password:</label>
-            <input type="password" class="form-control" id="loginPassword" required>
+            <label for="signupEmail">Email:</label>
+            <input type="email" class="form-control" id="signupEmail" required>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <div class="form-group">
+            <label for="signupFullName">Full Name:</label>
+            <input type="text" class="form-control" id="signupFullName" required>
+        </div>
+        <div class="form-group">
+            <label for="signupPassword">Password:</label>
+            <input type="password" class="form-control" id="signupPassword" required 
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <small class="form-text text-muted">
+                Must be at least 8 characters long, contain numbers and both lowercase and uppercase letters.
+            </small>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
 </div>
 
@@ -28,14 +40,16 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+document.getElementById('signupForm').addEventListener('submit', function(event) {
     event.preventDefault();
     var formData = {
-        username: document.getElementById('loginUsername').value,
-        password: document.getElementById('loginPassword').value
+        username: document.getElementById('signupUsername').value,
+        email: document.getElementById('signupEmail').value,
+        fullName: document.getElementById('signupFullName').value,
+        password: document.getElementById('signupPassword').value
     };
-    console.log('Login data:', formData);
-    // Add your code here to handle the form data, like validating it against a server.
+    console.log('Signup data:', formData);
+    // Add your code here to handle the form data, like sending it to a server or validating it further.
 });
 </script>
 
