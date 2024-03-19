@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <title>Registrering</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 
 <div class="container mt-5">
-    <h2>Create Account</h2>
+    <h2>Skapa konto</h2>
     <form id="signupForm">
         <div class="form-group">
-            <label for="signupUsername">Username:</label>
+            <label for="signupUsername">Användarnamn:</label>
             <input type="text" class="form-control" id="signupUsername" required>
         </div>
         <div class="form-group">
-            <label for="signupEmail">Email:</label>
+            <label for="signupEmail">E-post:</label>
             <input type="email" class="form-control" id="signupEmail" required>
         </div>
         <div class="form-group">
-            <label for="signupFullName">Full Name:</label>
+            <label for="signupFullName">Fullständigt namn:</label>
             <input type="text" class="form-control" id="signupFullName" required>
         </div>
         <div class="form-group">
-            <label for="signupPassword">Password:</label>
+            <label for="signupPassword">Lösenord:</label>
             <input type="password" class="form-control" id="signupPassword" required 
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
             <small class="form-text text-muted">
-                Must be at least 8 characters long, contain numbers and both lowercase and uppercase letters.
+                Måste vara minst 8 tecken långt, innehålla siffror samt både små och stora bokstäver.
             </small>
         </div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="submit" class="btn btn-primary">Registrera</button>
     </form>
 </div>
 
@@ -48,8 +48,8 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
         fullName: document.getElementById('signupFullName').value,
         password: document.getElementById('signupPassword').value
     };
-    console.log('Signup data:', formData);
-    // Add your code here to handle the form data, like sending it to a server or validating it further.
+    console.log('Registreringsdata:', formData);
+    // Lägg till din kod här för att hantera formulärdata, som att skicka den till en server eller validera den ytterligare.
 });
 </script>
 
