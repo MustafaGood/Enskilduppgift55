@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrera dig</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h2>Registrera dig</h2>
+    <form id="signupForm">
+        <div class="form-group">
+            <label for="username">Användarnamn:</label>
+            <input type="text" class="form-control" id="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-post:</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="fullname">Fullständiga namn:</label>
+            <input type="text" class="form-control" id="fullname" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Lösenord:</label>
+            <input type="password" class="form-control" id="password" required>
+            <small id="passwordHelp" class="form-text text-muted">Ditt lösenord ska vara starkt.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Skapa konto</button>
+    </form>
+</div>
+<script src="signup.js"></script>
+</body>
+</html>
