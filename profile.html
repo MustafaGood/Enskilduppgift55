@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Användarens Profil - Biografen</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h1>Användarprofil</h1>
+        <p><strong>Användarnamn:</strong> <span id="userEmail">Laddar...</span></p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const userEmail = localStorage.getItem('username') || 'Ingen e-postadress tillgänglig';
+            document.getElementById('userEmail').textContent = userEmail;
+        });
+    </script>
+</body>
+
+</html>
