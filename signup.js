@@ -1,20 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var signupForm = document.getElementById('signupForm');
+    var usernameInput = document.getElementById('username');
+    var emailInput = document.getElementById('email');
+    var fullnameInput = document.getElementById('fullname');
     var passwordInput = document.getElementById('password');
 
-    signupForm.addEventListener('submit', function(e) {
+    signupForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        if (!signupForm.checkValidity()) {
-            e.stopPropagation();
-            signupForm.classList.add('was-validated');
-        } else {
+        if (signupForm.checkValidity()) {
+            const email = emailInput.value;
+            localStorage.setItem('userEmail', email);
 
-            console.log('Skapar konto för:', username.value, email.value, fullname.value);
+        } else {
+            signupForm.classList.add('was-validated');
         }
     });
 
-    passwordInput.addEventListener('input', function(e) {
+
+    passwordInput.addEventListener('input', function (e) {
         var value = e.target.value;
         var strength = 0;
         if (value.length >= 8) strength++;
@@ -22,12 +26,22 @@ document.addEventListener('DOMContentLoaded', function() {
         if (/[0-9]/.test(value)) strength++;
         if (/[^A-Za-z0-9]/.test(value)) strength++;
 
-        document.querySelectorAll('.password-strength-meter > div').forEach(div => {
-            div.style.width = 0 + '%';
-        });
-
-        if (strength > 0) {
-            document.querySelector('.strength-' + (strength - 1)).style.width = 25 * strength + '%';
-        }
+        var meter = document.querySelector('.password-strength-meter > div');
+        meter.style.width = (strength * 25) + '%';
+        meter.style.backgroundColor = strengthColor(strength);
     });
+
+    function strengthColor(strength) {
+        var color = '';
+        if (strength === 0) {
+            color = 'transparent';
+        } else if (strength <= 2) {
+            color = '#ff3e36';
+        } else if (strength === 3) {
+            color = '#ffda36';
+        } else if (strength === 4) {
+            color = '#0be881';
+        }
+        return color;
+    }
 });
