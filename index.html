@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrera dig</title>
+    <title>Biografen - Start</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .password-strength-meter {
@@ -16,7 +16,22 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container mt-3">
+    <h2>Logga in</h2>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="usernameLogin">Användarnamn:</label>
+            <input type="text" class="form-control" id="usernameLogin" required>
+        </div>
+        <div class="form-group">
+            <label for="passwordLogin">Lösenord:</label>
+            <input type="password" class="form-control" id="passwordLogin" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Logga in</button>
+    </form>
+</div>
+
+<div class="container mt-5">
     <h2>Registrera dig</h2>
     <form id="signupForm" novalidate>
         <div class="form-group">
@@ -35,16 +50,20 @@
             <label for="password">Lösenord:</label>
             <input type="password" class="form-control" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
             <div class="password-strength-meter">
-                <div class="strength-0 bg-danger" style="width: 0%;"></div>
-                <div class="strength-1 bg-warning" style="width: 0%;"></div>
-                <div class="strength-2 bg-info" style="width: 0%;"></div>
-                <div class="strength-3 bg-success" style="width: 0%;"></div>
+                <div style="width: 0%; background-color: #0be881;"></div> <!-- Endast en färg används -->
             </div>
-            <div class="invalid-feedback">Ditt lösenord måste vara minst 8 tecken långt och inkludera en stor bokstav, en liten bokstav, ett nummer och ett specialtecken.</div>
+            <div class="invalid-feedback">
+                Ditt lösenord måste vara minst 8 tecken långt och inkludera en stor bokstav, en liten bokstav, ett nummer och ett specialtecken.
+            </div>
         </div>
         <button type="submit" class="btn btn-primary">Registrera</button>
     </form>
 </div>
+
 <script src="signup.js"></script>
+<script src="login.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
